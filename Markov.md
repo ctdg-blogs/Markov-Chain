@@ -68,21 +68,19 @@
 <img align=center src="./StockMarket.png" alt="not found"></img>
    + transition matrix 
 
-   <script type="text/javascript"
-src="./MathJax.js">
-</script>
+
 <script type="text/x-mathjax-config">
-var mathId = document.getElementsByClassName("math");
 MathJax.Hub.Config({
 tex2jax: {
    inlineMath: [['$','$'], ['\(','\)']],
    displayMath: [['$$','$$'], ["\\[","\\]"]]
 }
 });
-MathJax.Hub.Queue(["Typeset",MathJax.Hub,mathId]);
+</script>
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-<p class="math">
    $$
    \begin{bmatrix}
    \multirow{3}[0]{*}{P=}&
@@ -91,12 +89,12 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub,mathId]);
       & 0.25 & 0.25 & 0.5 
    \end{bmatrix}
    $$
-</p>
+
    + distribution over states == stochastic row vector x 
    <br></br>
-   <p class="math">
+
    $x^{\left(n+m\right)}=x^{\left(n\right)}\dot P^{m}$
-  </p>
+  
 
 #### `applications`
 ##### describe systems that follow a chain of linked events, where what happens next depends only on the current state of the system
