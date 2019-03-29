@@ -1,6 +1,5 @@
 ## Markov Chain
 
-<script type="java/javascript" async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 ---
 ### [Markov Property](https://en.wikipedia.org/wiki/Markov_property)
 
@@ -68,6 +67,22 @@
 + Hypothetical stock market
 <img align=center src="./StockMarket.png" alt="not found"></img>
    + transition matrix 
+
+   <script type="text/javascript"
+src="./MathJax.js">
+</script>
+<script type="text/x-mathjax-config">
+var mathId = document.getElementsByClassName("math");
+MathJax.Hub.Config({
+tex2jax: {
+   inlineMath: [['$','$'], ['\(','\)']],
+   displayMath: [['$$','$$'], ["\\[","\\]"]]
+}
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,mathId]);
+</script>
+
+<p class="math">
    $$
    \begin{bmatrix}
    \multirow{3}[0]{*}{P=}&
@@ -76,10 +91,12 @@
       & 0.25 & 0.25 & 0.5 
    \end{bmatrix}
    $$
+</p>
    + distribution over states == stochastic row vector x 
    <br></br>
+   <p class="math">
    $x^{\left(n+m\right)}=x^{\left(n\right)}\dot P^{m}$
-
+  </p>
 
 #### `applications`
 ##### describe systems that follow a chain of linked events, where what happens next depends only on the current state of the system
