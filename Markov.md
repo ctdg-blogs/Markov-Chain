@@ -1,3 +1,7 @@
+<script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 ## Markov Chain
 
 ---
@@ -66,24 +70,10 @@
 
 + Hypothetical stock market
 <img align=center src="./StockMarket.png" alt="not found"></img>
-   + transition matrix 
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-   inlineMath: [['$','$'], ['\(','\)']],
-   displayMath: [['$$','$$'], ["\\[","\\]"]]
-}
-});
-</script>
-<script type="text/javascript"
-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-   $$
+   $$P=
    \begin{bmatrix}
-   \multirow{3}[0]{*}{P=}&
       & 0.9 & 0.075 & 0.025\\
       & 0.15 & 0.8 & 0.05\\
       & 0.25 & 0.25 & 0.5 
@@ -91,9 +81,7 @@ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorM
    $$
 
    + distribution over states == stochastic row vector x 
-   <br></br>
-
-   $x^{\left(n+m\right)}=x^{\left(n\right)}\dot P^{m}$
+   $x^{\left(n+m\right)}=x^{\left(n\right)}\times P^{m}$
   
 
 #### `applications`
