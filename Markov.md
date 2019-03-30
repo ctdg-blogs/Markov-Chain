@@ -1,5 +1,5 @@
 <script type="text/javascript"
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 ## Markov Chain
@@ -70,8 +70,6 @@
 
 + Hypothetical stock market
 <img align=center src="./StockMarket.png" alt="not found"></img>
-
-
    $$P=
    \begin{bmatrix}
       & 0.9 & 0.075 & 0.025\\
