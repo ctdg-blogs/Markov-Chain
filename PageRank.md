@@ -110,8 +110,65 @@
 ---
 #### `computation`
 
++ `iterative`
+   + t=0, $PR(p_i;0)=\frac{1}{N}$
+   + at each step $t\rightarrow t+1$
+      + $PR(p_i;t+1)=\frac{1-d}{N}+d\sum_{pj\in M(p_i)}\frac{PR(p_j;t)}{L(p_j)}$, $M(p_i)$ is the set of pages that link to $p_i$.
+      + matrix notation R
+      $R(t+1)=dMR(t)+\frac{1-d}{N}$ * <b>1</b>,
+      <b>1</b> is the column vector of length N containing only ones,
+      $$
+      M_{ij}=\left\{
+          \begin{aligned}
+            \frac{1}{L(p_j)}, & \text{if j links to i} \\
+            0, & \text{otherwise}
+          \end{aligned}
+      \right.
+      $$
+   + computation ends when |R(t+1)-R(t)| < $\epsilon$
++ `algebraic`
+   + $t\rightarrow \infty$, $R=dMR+\frac{1-d}{N}$ * <b>1</b>
+      + R=$(\textbf{I}-dM)^{-1}\frac{1-d}{N}$ * <b>1</b>
+      + M is a stochastic matrix $\rightarrow$ Perron-Frobenius theorem: $\exists$ eigenvalue = 1 $\rightarrow$ the solution exists and is unique for 0 < d < 1.
++ `power method`
+   + transition probability M : column-stachastic
+   if a column of M has only 0 values (L($p_i$)=0), replace this column with $\frac{1}{N}\textbf{1}$.
+   + probability distribution R : |R|=1, <b>E</b>R=<b>1</b>
+   + R = (dM+$\frac{1-d}{N}$<b>E</b>) R := PR, $\Rightarrow$ R is the principle eigenvector of P.
+   + apply power method procedure
+      + starting with an arbitrary vector x(0)
+      + x(t+1) = ||Px(t)||
+      + iterate until |x(t+1)-x(t)| < $\epsilon$
++ `verifying anwsers`
+$$\textbf{R}_{power}=||\textbf{R}_{iterative}||=||\textbf{R}_{algebraic}||$$
 
+---
 
+#### `Matlab`
+
+```matlab
+% Parameter M adjacency matrix where M_i,j represents the link from 'j' to 'i', such that for all 'j'
+%     sum(i, M_i,j) = 1
+% Parameter d damping factor
+% Parameter v_quadratic_error quadratic error for v
+% Return v, a vector of ranks such that v_i is the i-th rank from [0, 1]
+
+function [v] = rank2(M, d, v_quadratic_error)
+
+N = size(M, 2); % N is equal to either dimension of M and the number of documents
+v = rand(N, 1);
+v = v ./ norm(v, 1);   % This is now L1, not L2
+last_v = ones(N, 1) * inf;
+M_hat = (d .* M) + (((1 - d) / N) .* ones(N, N));
+
+while(norm(v - last_v, 2) > v_quadratic_error)
+	last_v = v;
+	v = M_hat * v;
+        % removed the L2 norm of the iterated PR
+end
+
+end %function
+```
 
 ---
 #### `topics`
