@@ -1,5 +1,4 @@
-<script type="text/javascript"
-       src="/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//www.90168.org cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 ## Markov Chain
@@ -111,6 +110,12 @@
    \end{bmatrix}
    $$
    which indicates that 62.5% will be a bull market, 31.25% bear market, and 6.25% stagnant.
+
+#### `properties`
+
++ reducibility 可还原性
+   + irreducible : if possible to go from $\forall$ state i to $\forall$ state j.
+   + accessible : $P_{i\rightarrow j}$ > 0
   
 
 #### `applications`
