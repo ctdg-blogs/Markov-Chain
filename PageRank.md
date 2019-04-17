@@ -1,6 +1,6 @@
 <script src="//www.90168.org cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-## PageRank
+## [PageRank](#topic)
 
 ---
 
@@ -131,7 +131,7 @@
       + R=$(\textbf{I}-dM)^{-1}\frac{1-d}{N}$ * <b>1</b>
       + M is a stochastic matrix $\rightarrow$ Perron-Frobenius theorem: $\exists$ eigenvalue = 1 $\rightarrow$ the solution exists and is unique for 0 < d < 1.
 + `power method`
-   + transition probability M : column-stachastic
+   + transition probability M : column-stochastic
    if a column of M has only 0 values (L($p_i$)=0), replace this column with $\frac{1}{N}\textbf{1}$.
    + probability distribution R : |R|=1, <b>E</b>R=<b>1</b>
    + R = (dM+$\frac{1-d}{N}$<b>E</b>) R := PR, $\Rightarrow$ R is the principle eigenvector of P.
@@ -169,6 +169,7 @@ end
 
 end %function
 ```
+<span id="topic"></span>
 
 ---
 #### `topics`
